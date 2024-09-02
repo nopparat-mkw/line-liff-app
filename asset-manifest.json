@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/line-liff-app/static/css/main.e6c13ad2.css",
-    "main.js": "/line-liff-app/static/js/main.b3c3cfed.js",
+    "main.js": "/line-liff-app/static/js/main.c21f6a11.js",
     "index.html": "/line-liff-app/index.html",
     "main.e6c13ad2.css.map": "/line-liff-app/static/css/main.e6c13ad2.css.map",
-    "main.b3c3cfed.js.map": "/line-liff-app/static/js/main.b3c3cfed.js.map"
+    "main.c21f6a11.js.map": "/line-liff-app/static/js/main.c21f6a11.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.b3c3cfed.js"
+    "static/js/main.c21f6a11.js"
   ]
 }
