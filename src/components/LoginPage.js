@@ -8,6 +8,8 @@ const LoginPage = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const version = process.env.REACT_APP_VERSION;  // Retrieve the version number from environment variables
+
   const handleLogin = () => {
     // Retrieve credentials from environment variables
     const validUsername = process.env.REACT_APP_USERNAME;
@@ -46,6 +48,9 @@ const LoginPage = ({ onLoginSuccess }) => {
           </Button>
         </Form.Item>
       </Form>
+      <div style={{ marginTop: 20, textAlign: 'center' }}>
+        <Typography.Text type="secondary">Version: {version}</Typography.Text>
+      </div>
     </div>
   );
 };

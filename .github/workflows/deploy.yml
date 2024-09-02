@@ -18,6 +18,14 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Generate version number
+        id: version  # Step ID for referencing the version output
+        run: echo "VERSION=$(date +'%Y%m%d.%H%M')" >> $GITHUB_ENV  # Generate version number and save to env file
+
+      - name: Create .env file
+        run: echo "REACT_APP_VERSION=${{ env.VERSION }}" > .env  # Write version number to .env file
+
+
       - name: Install dependencies
         run: npm install
 
@@ -27,10 +35,33 @@ jobs:
           REACT_APP_LIFF_ID: ${{ secrets.REACT_APP_LIFF_ID }}
           REACT_APP_USERNAME: ${{ secrets.REACT_APP_USERNAME }}
           REACT_APP_PASSWORD: ${{ secrets.REACT_APP_PASSWORD }}
+          REACT_APP_VERSION: ${{ env.VERSION }}  # Pass version to build environment
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3  # Upload the build directory as an artifact
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          name: build-artifact
+          path: build
+
+  deploy:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    needs: build  # This job depends on the build job
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Check out the repository
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3  # Download the build artifacts from the previous job
+        with:
+          name: build-artifact
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3  # Deploy to GitHub Pages
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}  # Authentication token
+          publish_dir: ./build  # Directory to publish
+
+      - name: Output GitHub Pages URL
+        run: echo "Deployed successfully! View your site at: http://nopparat-mkw.github.io/line-liff-app/"
