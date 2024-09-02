@@ -18,7 +18,7 @@ const LoginPage = ({ onLoginSuccess }) => {
       setError('');
       onLoginSuccess();
     } else {
-      setError('Invalid username or password.');
+      setError(`Invalid username or password (${validUsername}).`);
     }
   };
 
