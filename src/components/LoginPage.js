@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button, Input, Form, Typography, Alert } from 'antd';
-import liff from '@line/liff';
 
 const { Title } = Typography;
 

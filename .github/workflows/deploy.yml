@@ -23,6 +23,7 @@ jobs:
 
       - name: Build the React app
         env:
+          CI: false
           REACT_APP_LIFF_ID: ${{ secrets.REACT_APP_LIFF_ID }}
           REACT_APP_USERNAME: ${{ secrets.REACT_APP_USERNAME }}
           REACT_APP_PASSWORD: ${{ secrets.REACT_APP_PASSWORD }}
