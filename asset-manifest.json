@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/line-liff-app/static/css/main.e6c13ad2.css",
+    "main.js": "/line-liff-app/static/js/main.1583a837.js",
+    "index.html": "/line-liff-app/index.html",
+    "main.e6c13ad2.css.map": "/line-liff-app/static/css/main.e6c13ad2.css.map",
+    "main.1583a837.js.map": "/line-liff-app/static/js/main.1583a837.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.1583a837.js"
+  ]
+}
