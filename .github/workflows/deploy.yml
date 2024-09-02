@@ -34,6 +34,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-
-      - name: Output GitHub Pages URL
-        run: echo "Deployed successfully! View your site at: http://nopparat-mkw.github.io/line-liff-app/"
