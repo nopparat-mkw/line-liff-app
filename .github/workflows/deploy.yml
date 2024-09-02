@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'    
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
@@ -27,7 +27,6 @@ jobs:
           REACT_APP_LIFF_ID: ${{ secrets.REACT_APP_LIFF_ID }}
           REACT_APP_USERNAME: ${{ secrets.REACT_APP_USERNAME }}
           REACT_APP_PASSWORD: ${{ secrets.REACT_APP_PASSWORD }}
-          REACT_APP_VERSION: "20240902.1221"  # Pass version to build environment
         run: npm run build
 
       - name: Deploy to GitHub Pages
@@ -37,4 +36,4 @@ jobs:
           publish_dir: ./build
 
       - name: Output GitHub Pages URL
-        run: echo "Deployed successfully! View your site at: http://nopparat-mkw.github.io/line-liff-app/"          
+        run: echo "Deployed successfully! View your site at: http://nopparat-mkw.github.io/line-liff-app/"

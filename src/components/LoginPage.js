@@ -8,7 +8,7 @@ const LoginPage = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const version = process.env.REACT_APP_VERSION;  // Retrieve the version number from environment variables
+  const version = "2024-09-02.1223";  // Retrieve the version number from environment variables
 
   const handleLogin = () => {
     // Retrieve credentials from environment variables
